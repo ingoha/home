@@ -21,6 +21,10 @@ map ;R :let g:last_php_file=expand("%:p")<CR>:!clear ; php -d display_errors=1 -
 map ;r :exec '!clear ; php -d display_errors=1 -f' g:last_php_file<CR>
 ";l lint checks the current file through php
 map ;l :!clear ; php -d display_errors=1 -lf %:p<CR>
+";p toggles paste modes
+map <silent> ;p :let &paste = &paste == 1 ? 0 : 1<CR>:echo 'paste ' . ( &paste == 1 ? 'ON' : 'OFF' )<CR>
+";h turns off highlighting
+map ;h :noh<CR>
 
 ",v brings up my .vimrc
 ",V reloads it -- making all changes active (have to save first)
