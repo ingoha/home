@@ -42,7 +42,7 @@ function main()
     }
 
     // symlink vimrc
-    if (file_exists("{$homePath}/.vimrc")) {
+    if (file_exists("{$homePath}/.vimrc") || is_link("{$homePath}/.vimrc")) {
         rename("{$homePath}/.vimrc",  "{$homePath}/.old/.vimrc");
     }
 
