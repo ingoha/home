@@ -16,11 +16,11 @@ set showmatch
 syntax on
 
 ";r runs the current file from php
-map ;R :let g:last_php_file=expand("%:p")<CR>:!clear ; php -d display_errors=1 -f %:p<CR>
+map ;R :let g:last_php_file=expand("%:p")<CR>:!clear ; nodejs %:p<CR>
 ";R runs the last ran file from php
-map ;r :exec '!clear ; php -d display_errors=1 -f' g:last_php_file<CR>
+map ;r :exec '!clear ; nodejs ' g:last_php_file<CR>
 ";l lint checks the current file through php
-map ;l :!clear ; php -d display_errors=1 -lf %:p<CR>
+map ;l :!clear ; nodejs %:p<CR>
 ";p toggles paste modes
 map <silent> ;p :let &paste = &paste == 1 ? 0 : 1<CR>:echo 'paste ' . ( &paste == 1 ? 'ON' : 'OFF' )<CR>
 ";h turns off highlighting
